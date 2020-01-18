@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %} <!-- Заевляем что подгружаем папку статик -->
+<html>
+
+<head>
+    <title>Примеры. Задание и изменение параметров карты.</title>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey={{api_key}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/map.js' %}" ></script>
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/main.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{%  static 'icon/pageicon.png' %}">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-3.4.1.min.js' %}" ></script>
+    
+    <!-- jQuery-ui -->
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}" ></script>
+    <link rel="stylesheet" type="text/css"  href="{% static 'js/jquery/jquery-ui.min.css' %}">
+
+    <!-- bootstrap-material-datetimepicker -->   
+    <script type="text/javascript" src="{% static 'js/moment-with-locales.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/datetimepicker/bootstrap-material-datetimepicker.js' %}" ></script>
+    <link rel="stylesheet" type="text/css"  href="{% static 'js/datetimepicker/bootstrap-material-datetimepicker.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'js/jquery/pagejquery.js' %}" ></script>
+
+
+</head>
+
+<body>
+    <div id="tabs">
+        <ul id="tab_top"> 
+            <li><a href="#fragment-1"><span>ВЛ и ПС</span></a></li>
+            <li><a href="#fragment-2"><span>Журнал</span></a></li>
+        </ul>
+        <div id="fragment-1">
+            <span class="counters" id="counter_1"></span>
+            <a href="logout" class="logout" style="color: white"><span>Выйти</span></a>
+            <div class="layer" id="layer_1"></div>
+            <div class="search">
+                <input type="checkbox" id="all_check_1" >
+                <input id= "search-input-1" class="search-input" type="text">
+                <button class="search-btn" id="search-btn-1"></button>
+            </div>
+            <div class="search-parent">
+                <div id="s_cont_1" class="search-coment">
+                    <p>Тип обьекта:</p>
+                    <p>Uном:</p>
+                    <p>РУП:</p>
+                    <p>Филиал:</p>
+                </div>
+                <div class="search-selectors">
+                    <select name="" id="objtyte_1" ></select><br>
+                    <input id="Unom_1" ><br>
+                    <select name="" id="rup_1" ></select><br>
+                    <select name="" id="branch_1" ></select><br>
+                </div>
+            </div>
+            
+             
+        </div>
+        <div id="fragment-2">
+            <label for="radio-1">Сейчас</label>
+            <input type="radio" name="radio-1" id="radio-1" checked>
+            <label for="radio-2">Период</label>
+            <input type="radio" name="radio-1" id="radio-2">
+            <a href="logout" class="logout" style="color: white"><span>Выйти</span></a><br>
+            <span class="counters" id="counter_2"></span>
+            
+            <div class="layer" id="layer_2"></div>
+            <div class="search">
+                <input type="checkbox" id="all_check_2" >
+                <input id= "search-input-2" class="search-input" type="text">
+                <button class="search-btn" id="search-btn-2"></button>
+            </div>
+            <div class="search-parent">
+                <div id="s_cont_2" class="search-coment">
+                    <p>Тип обьекта:</p>
+                    <p>Uном:</p>
+                    <p>РУП:</p>
+                    <p>Филиал:</p>
+                    <p>Растояние:</p>
+                </div>
+                <div class="search-selectors">
+                    <select name="" id="objtyte_2" ></select><br>
+                    <input id="Unom_2" ><br>
+                    <select name="" id="rup_2" ></select><br>
+                    <select name="" id="branch_2" ></select><br>
+                    <input id="dist_2" >
+                </div>
+            </div>
+            <div class="search-parent" id="search-blok-2-botton">
+                <div class="search-coment">
+                    <p>Дата (от):</p>
+                    <p>Дата (до):</p>
+                </div>
+                <div class="search-selectors">
+                    <input type="text" id="date_start_2" class="date_area" ><br>
+                    <input type="text" id="date_end_2" class="date_area" ><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+    <div id="map-box">
+        lat: 00.0000, lon: 00.0000
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>Примеры. Задание и изменение параметров карты.</title>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/log.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{%  static 'icon/pageicon.png' %}">
+</head>
+
+<body>
+    {% block content %}
+
+    <div id="container">
+        <div id="header">
+            <h1>Аунтификация</h1>
+        </div>
+        
+        <div class="content">
+
+            {% if form.errors %}
+            <div class="red">
+                <p>Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз.</p>
+            </div>
+            {% endif %}
+            
+            {% if next %}
+                {% if user.is_authenticated %}
+                <div class="red">
+                    <p>Ваша учетная запись не имеет доступа к этой странице.
+                            Чтобы продолжить, пожалуйста, войдите в систему с учетной
+                            записью, которая имеет доступ.</p>
+                </div>
+                {% else %}
+                <div class="red">
+                    <p>Пожалуйста, войдите, чтобы увидеть эту страницу.</p>
+                </div>
+                {% endif %}
+            {% endif %}
+
+            <div id="content-main">
+                <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                
+                <div class="form-row">
+                    {{ form.username.label_tag }}<br>
+                    {{ form.username }}
+                </div>
+                <div class="form-row">
+                    {{ form.password.label_tag }}<br>
+                    {{ form.password }}
+                </div>
+                <div class="submit-row">
+                    <input type="submit" value="Войти" />
+                    <!-- <input type="hidden" name="next" value="{{ next }}" /> -->
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+     
+    {% endblock %}
+</body>
+
+</html>
