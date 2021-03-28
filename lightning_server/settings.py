@@ -88,17 +88,39 @@ WSGI_APPLICATION = 'lightning_server.wsgi.application'
     }
 } """
 
-
 DATABASES = {
     'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_django',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': 'db',
+        'PORT': '3306',
+    }
+}
+
+""" 
+DATABASES = {
+    'default': {
+                'ENGINE': 'django.db.backends.postgresql',
                 'NAME': 'lightning_project',
                 'USER' : security_data ['sql-user'],
                 'PASSWORD' : security_data ['sql-password'],
                 'HOST' : '127.0.0.1',
                 'PORT' : '5432',
     }
-}
+} """ 
+""" 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', #'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+} """
 
 
 # Password validation

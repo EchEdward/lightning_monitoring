@@ -1,4 +1,4 @@
-let static_dir = '';
+
 // /lightning_server/
 // Цвета для всех классов напряжения
 let colors = {750: '#1f7a00',
