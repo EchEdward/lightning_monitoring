@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'lightning_server.wsgi.application'
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 } """
-
+""" 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -97,7 +97,7 @@ DATABASES = {
         'HOST': 'db',
         'PORT': '3306',
     }
-}
+} """
 
 """ 
 DATABASES = {
@@ -110,7 +110,7 @@ DATABASES = {
                 'PORT' : '5432',
     }
 } """ 
-""" 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', #'django.db.backends.postgresql',
@@ -120,7 +120,7 @@ DATABASES = {
         'HOST': 'db',
         'PORT': 5432,
     }
-} """
+}
 
 
 # Password validation
