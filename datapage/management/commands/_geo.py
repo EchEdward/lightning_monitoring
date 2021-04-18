@@ -1,6 +1,6 @@
 """Define various geo utility functions."""
 from math import radians, cos, sin, asin, sqrt, pi, radians, degrees
-from .sph import direct, a_e
+from _sph import direct, a_e
 
 
 

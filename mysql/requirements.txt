@@ -1,4 +1,0 @@
-Django==2.1.15
-mysqlclient==2.0.1
-django-mysql==3.7.1
-requests

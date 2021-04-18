@@ -8,14 +8,21 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   web:
     build: .
     command: >
-      sh -c "sleep 20 &&
-              python manage.py migrate --noinput &&
+      sh -c " /usr/src/app/entrypoint.sh &&
               python manage.py runserver 0.0.0.0:8000 --noreload"
     
     ports:
       - "8000:8000"
-    depends_on:
+    links:
       - db
+    depends_on:
+      db:
+        condition: service_healthy

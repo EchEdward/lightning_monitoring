@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from datapage.tasks import notify_user
+
 
 from datapage.urls import urlpatterns as datapage_url
 from frontpage.urls import urlpatterns as frontpage_url
@@ -26,14 +26,3 @@ urlpatterns = [
 
 urlpatterns+=datapage_url
 urlpatterns+=frontpage_url
-
-import threading
-import time
-
-def clock(interval):
-    while True:
-        notify_user()
-        time.sleep(interval)
-t = threading.Thread(target=clock, args=(60,))
-#t.daemon = True
-t.start()

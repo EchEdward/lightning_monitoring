@@ -1,14 +1,20 @@
 # pylint: disable=E1101
 from datetime import datetime, timedelta
 from django.conf import settings
-from .models import Strikes, Coordinates_VL, Log_Strikes, Coordinates_PS
+
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+from datapage.models import Strikes, Coordinates_VL, Log_Strikes, Coordinates_PS
+
 import pytz
 import requests
 import json
 import random
 
 
-from .geo import haversine, isnearby_vl, isnearby_ps, OnePoint
+from _geo import haversine, isnearby_vl, isnearby_ps, OnePoint
 
 
 lz= pytz.timezone('Iceland')# pytz.timezone(settings.TIME_ZONE)
