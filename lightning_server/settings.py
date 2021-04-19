@@ -99,21 +99,9 @@ DATABASES = {
     }
 } """
 
-""" 
 DATABASES = {
     'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'lightning_project',
-                'USER' : security_data ['sql-user'],
-                'PASSWORD' : security_data ['sql-password'],
-                'HOST' : '127.0.0.1',
-                'PORT' : '5432',
-    }
-}  """
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', #'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql', #'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',

@@ -16,7 +16,10 @@ services:
   web:
     build: .
     command: >
-      sh -c " /usr/src/app/entrypoint.sh &&
+      sh -c " python manage.py makemigrations datapage --no-input &&
+              python manage.py migrate --no-input &&
+              python manage.py initadmin &&
+              python manage.py loaddata db.json  &&
               python manage.py runserver 0.0.0.0:8000 --noreload"
     
     ports:
