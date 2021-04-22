@@ -17,17 +17,17 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
-    print(sys.argv)
-    if len(sys.argv)>1:
+    #print(sys.argv)
+    """ if len(sys.argv)>1:
         if sys.argv[1] =='runserver':
             cmd = ['python', 'manage.py','scraber']
-            subprocess.Popen(cmd)
+            subprocess.Popen(cmd) """
 
     execute_from_command_line(sys.argv)
     
-    if len(sys.argv)>1:
+    """ if len(sys.argv)>1:
         if sys.argv[1] =='runserver':
-            my_process = my_process.kill()
+            my_process = my_process.kill() """
 
 
 
