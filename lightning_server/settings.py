@@ -29,7 +29,7 @@ SECRET_KEY = security_data ["api-key"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['80.249.148.11','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 
